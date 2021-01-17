@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-md-6 register-petition">
+      <!-- form card register -->
+      <div class="card-body">
+        <form [formGroup]="petitionForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="form-group">
+            <label for="inputPetitionTitle">Petition Title</label>
+            <input class="form-control" type="text" formControlName="title">
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && petitionForm.title.errors?.required">
+                Petition Title is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputPetitionBody">Petition Content</label>
+            <input class="form-control" type="text" formControlName="body">
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && petitionForm.title.errors?.required">
+              Petition Content is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputPetitionBanner">Banner URL(http only)</label>
+            <input class="form-control" type="text" formControlName="banner">
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && petitionForm.title.errors?.required">
+                Petition Banner is required.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="inputPetitionersEmail">Petitioner's Email</label>
+            <input class="form-control" type="text" formControlName="petitioner_email">
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && petitionForm.petitioner_email.errors?.required">
+              Enter your email.
+            </div>
+            <div class="invalid-feedback" *ngIf="submitted && petitionForm.petitioner_email.errors?.pattern">
+              Enter valid email.
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="inputPetitionersName">Petitioner's Name</label>
+            <input class="form-control" type="text" formControlName="petitioner_name">
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && petitionForm.petitioner_name.errors?.required">
+                Enter your name
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputPetitionersContact">Petitioner's Contact</label>
+            <input class="form-control" type="text" formControlName="petitioner_contact">
+            <!-- error -->
+            <div class="invalid-feedback" *ngIf="submitted && petitionForm.phoneNumber.errors?.required">
+              Enter your phone number.
+            </div>
+            <div class="invalid-feedback" *ngIf="submitted && petitionForm.phoneNumber.errors?.pattern">
+              Enter Numbers Only
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block" type="submit">Submit Petition</button>
+          </div>
+        </form>
+  
+      </div>
+    </div><!-- form card register -->
+  </div>

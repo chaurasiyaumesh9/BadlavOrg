@@ -3,21 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BadlavHeaderComponent } from './badlav-header/badlav-header.component';
-import { BadlavFooterComponent } from './badlav-footer/badlav-footer.component';
+import { BadlavHeaderComponent } from './Components/badlav-header/badlav-header.component';
+import { BadlavFooterComponent } from './Components/badlav-footer/badlav-footer.component';
+import { PetitionService } from './Services/Petition.Service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { PetitionNewComponent } from './Components/petition-new/petition-new.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    PetitionNewComponent,
     BadlavHeaderComponent,
     BadlavFooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PetitionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
